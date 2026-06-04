@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+  <title>About — Gymnasium</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #3e4042;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 200;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      padding: 15px 20px;
+      background: #202021;
+      backdrop-filter: blur(10px);
+      box-sizing: border-box;
+    }
+
+    .logo {
+      margin-right: 40px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo-gym { color: #806e61; }
+    .logo-divider { color: #555; }
+    .logo-nasium { color: whitesmoke; }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: whitesmoke;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover { color: #806e61; }
+
+    /* HERO */
+   #about-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 60px 60px;
+  background-image: url('aboutabout.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero-content h1 {
+  font-size: 52px;
+  font-weight: 900;
+  color: whitesmoke;
+  margin-bottom: 16px;
+}
+
+.about-hero-content p {
+  font-size: 18px;
+  color: #b0a89f;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+    #about-hero h1 {
+      font-size: 52px;
+      font-weight: 900;
+      color: whitesmoke;
+      margin-bottom: 16px;
+    }
+
+    #about-hero p {
+      font-size: 18px;
+      color: #b0a89f;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* STORY */
+    #story {
+      padding: 100px 60px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    #story h2 {
+      font-size: 36px;
+      font-weight: 900;
+      color: whitesmoke;
+      margin-bottom: 24px;
+    }
+
+    #story p {
+      font-size: 17px;
+      color: #b0a89f;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    /* STATS */
+    #stats {
+      background-color: #2e3032;
+      padding: 80px 60px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .stat-card h3 {
+      font-size: 48px;
+      font-weight: 900;
+      color: #806e61;
+      margin-bottom: 8px;
+    }
+
+    .stat-card p {
+      font-size: 15px;
+      color: #b0a89f;
+    }
+
+    /* MISSION */
+    #mission {
+      padding: 100px 60px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #mission h2 {
+      font-size: 36px;
+      font-weight: 900;
+      color: whitesmoke;
+      margin-bottom: 24px;
+    }
+
+    #mission p {
+      font-size: 17px;
+      color: #b0a89f;
+      line-height: 1.9;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #202021;
+      padding: 60px 60px 20px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #333;
+    }
+
+    .footer-logo span {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .footer-logo p {
+      color: #b0a89f;
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-links, .footer-contact, .footer-social {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links h4, .footer-contact h4, .footer-social h4 {
+      color: whitesmoke;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .footer-links a, .footer-social a {
+      color: #b0a89f;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .footer-links a:hover, .footer-social a:hover { color: #806e61; }
+
+    .footer-contact p {
+      color: #b0a89f;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-bottom p {
+      color: #555;
+      font-size: 13px;
+    } 
+
+    .nav-links a.active {
+  color: #806e61;
+  border-bottom: 2px solid #806e61;
+  padding-bottom: 2px;
+} 
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 20px;
+  }
+
+  .logo { margin-right: 0; }
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 15px; }
+
+  #about-hero {
+    padding: 120px 24px 40px;
+  }
+
+  #about-hero h1 {
+    font-size: 36px;
+  }
+
+  #story {
+    padding: 60px 24px;
+  }
+
+  #story h2 {
+    font-size: 26px;
+  }
+
+  #stats {
+    padding: 60px 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stat-card h3 {
+    font-size: 36px;
+  }
+
+  #mission {
+    padding: 60px 24px;
+  }
+
+  #mission h2 {
+    font-size: 26px;
+  }
+
+  footer { padding: 40px 24px 20px; }
+  .footer-container { grid-template-columns: 1fr; gap: 30px; }
+}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <span class="logo-gym">GYM</span><span class="logo-divider"> | </span><span class="logo-nasium">NASIUM</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="branches.html">Branches</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- ABOUT HERO -->
+<section id="about-hero">
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-content">
+    <h1>Our Story</h1>
+    <p>From a single gym to a movement — this is how Gymnasium was born.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <h2>How It All Started</h2>
+  <p>Gymnasium was established in 2010 with one simple belief — that everyone deserves access to a world-class fitness experience. What started as a small, passionate team in Tbilisi quickly grew into one of Georgia's most recognized gym networks.</p>
+  <p>Our founders were athletes themselves. They knew what was missing — not just equipment, but guidance, community, and real results. So they built exactly that. A place where beginners feel welcome and professionals feel challenged.</p>
+  <p>Over the years, we've expanded across multiple locations, trained thousands of members, and built a team of certified coaches who genuinely care about your progress. But our core hasn't changed — we're still that same passionate team, just bigger.</p>
+
+  <h2>Where We Are Today</h2>
+  <p>Today, Gymnasium operates across several branches in Georgia, offering state-of-the-art equipment, personal training, group classes, and nutrition coaching — all under one roof. We're proud to be more than a gym. We're a community built on discipline, progress, and support.</p>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>14+</h3>
+      <p>Years of Experience</p>
+    </div>
+    <div class="stat-card">
+      <h3>8</h3>
+      <p>Branches in Georgia</p>
+    </div>
+    <div class="stat-card">
+      <h3>5000+</h3>
+      <p>Active Members</p>
+    </div>
+    <div class="stat-card">
+      <h3>50+</h3>
+      <p>Professional Trainers</p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="mission">
+  <h2>Our Mission</h2>
+  <p>To make fitness accessible, effective, and enjoyable for everyone — regardless of age, experience, or goal. We believe that a healthier body leads to a stronger mind, and we're here to help you achieve both. At Gymnasium, your journey is our mission.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <span class="logo-gym">GYM</span><span class="logo-divider"> | </span><span class="logo-nasium">NASIUM</span>
+      <p>Your Best Version Starts Here.</p>
+    </div>
+    
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📍 Tbilisi, Georgia</p>
+      <p>📞 +995 555 000 000</p>
+      <p>✉️ info@gymnasium.ge</p>
+    </div>
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Gymnasium. All rights reserved.</p>
+  </div>
+</footer>
+ <script>
+  const links = document.querySelectorAll('.nav-links a');
+  links.forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+  });
+</script>
+</body>
+</html>

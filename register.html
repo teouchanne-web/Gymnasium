@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+  <title>Register — Gymnasium</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #3e4042;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      background: #202021;
+      backdrop-filter: blur(10px);
+      box-sizing: border-box;
+    }
+
+    .logo {
+      margin-right: 40px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo-gym { color: #806e61; }
+    .logo-divider { color: #555; }
+    .logo-nasium { color: whitesmoke; }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: whitesmoke;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover { color: #806e61; }
+
+    .nav-links a.active {
+      color: #806e61;
+      border-bottom: 2px solid #806e61;
+      padding-bottom: 2px;
+    }
+
+    /* REGISTER SECTION */
+    #register {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 60px 60px;
+    }
+
+    .register-box {
+      background: #2e3032;
+      border-radius: 20px;
+      padding: 60px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .register-box h1 {
+      font-size: 36px;
+      font-weight: 900;
+      color: whitesmoke;
+      margin-bottom: 8px;
+    }
+
+    .register-box p.subtitle {
+      font-size: 15px;
+      color: #b0a89f;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .register-box p.subtitle span {
+      color: #806e61;
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #b0a89f;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      background: #3e4042;
+      border: 1px solid #444;
+      border-radius: 8px;
+      color: whitesmoke;
+      font-family: 'Raleway', sans-serif;
+      font-size: 15px;
+      box-sizing: border-box;
+      transition: 0.3s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #806e61;
+    }
+
+    .form-group select option {
+      background: #2e3032;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 16px;
+      background: #806e61;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      cursor: pointer;
+      transition: 0.3s;
+      letter-spacing: 0.5px;
+      margin-top: 10px;
+    }
+
+    .register-btn:hover {
+      background: #5e4f45;
+      transform: scale(1.02);
+    }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background: #806e61;
+      border-radius: 10px;
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <span class="logo-gym">GYM</span><span class="logo-divider"> | </span><span class="logo-nasium">NASIUM</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="branches.html">Branches</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- REGISTER -->
+<section id="register">
+  <div class="register-box">
+    <h1>Free First Session</h1>
+    <p class="subtitle">Fill in the form and we'll contact you to book your <span>first session — completely free.</span></p>
+
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" placeholder="John Doe">
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="+995 555 000 000">
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="you@email.com">
+    </div>
+
+    <div class="form-group">
+      <label>Preferred Branch</label>
+      <select>
+        <option value="">Select a branch...</option>
+        <option>Vake Branch</option>
+        <option>Saburtalo Branch</option>
+        <option>Didube Branch</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Your Goal</label>
+      <select>
+        <option value="">Select your goal...</option>
+        <option>Lose Weight</option>
+        <option>Build Muscle</option>
+        <option>Improve Fitness</option>
+        <option>Just Explore</option>
+      </select>
+    </div>
+
+    <button class="register-btn" onclick="submitForm()">Get My Free Session</button>
+
+    <div class="success-msg" id="successMsg">
+      ✅ Done! We'll reach out to you shortly.
+    </div>
+  </div>
+</section>
+
+<script>
+  function submitForm() {
+    document.getElementById('successMsg').style.display = 'block';
+  }
+
+  const links = document.querySelectorAll('.nav-links a');
+  links.forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
+</body>
+</html>
